@@ -1,0 +1,9 @@
+<div class="field">
+    <%= f.label :strain_id %>
+    <%= f.select :strain_id, options_for_select(@strains) %>
+</div>
+
+<div class="field">
+    <%= f.label :percentage %>
+    <%= f.number_field :percentage %>
+</div>
