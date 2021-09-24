@@ -1,0 +1,9 @@
+<div class="field">
+    <%= f.label :oenologist_id %>
+    <%= f.collection_select :oenologist_id, @oenologists, :id, :name %>
+</div>
+
+<div class="field">
+    <%= f.label :score %>
+    <%= f.number_field :score %>
+</div>

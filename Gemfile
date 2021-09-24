@@ -29,6 +29,7 @@ gem 'jbuilder', '~> 2.5'
 # Adding cocoon -> https://github.com/nathanvda/cocoon
 gem 'jquery-rails'
 gem 'cocoon'
+gem 'devise'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 

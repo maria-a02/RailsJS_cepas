@@ -9,6 +9,7 @@
       <th>Year</th>
       <th>Strains/Assemblies</th>
       <th>Percentage</th>
+      <th>Score</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -20,11 +21,12 @@
         <td><%= wine.year %></td>
         <td>
           <ul>
-            <%= wine.assemblies.each do |assembly| %>
+            <% wine.assemblies.each do |assembly| %>
               <li><%= assembly.strain.name %>(<%= assembly.percentage %>%)</li>
             <% end %>
           </ul>
         </td>
+
         <td><%= link_to 'Show', wine %></td>
         <td><%= link_to 'Edit', edit_wine_path(wine) %></td>
         <td><%= link_to 'Destroy', wine, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :magazines
+  resources :oenologists
+  devise_for :users
   resources :strains
   resources :wines
   root 'wines#index'

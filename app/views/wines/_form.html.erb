@@ -27,6 +27,12 @@
     <% end %>
   </div>
 
+    <div class="field">
+    <%= form.fields_for :wine_scores do |ff| %>
+      <%= render 'wine_score_fields', f: ff %>
+    <% end %>
+  </div>
+
   <div class="links">
     <%= link_to_add_association 'Otra cepa', form, :assemblies %>
   </div>
