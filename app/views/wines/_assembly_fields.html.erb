@@ -1,6 +1,6 @@
 <div class="field">
     <%= f.label :strain_id %>
-    <%= f.collection_select :strain_id, @strains, :id, :name %>
+    <%= f.select :strain_id, options_for_select(@strains_two) %> 
 </div>
 
 <div class="field">

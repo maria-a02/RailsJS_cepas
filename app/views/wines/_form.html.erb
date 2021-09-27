@@ -22,14 +22,14 @@
   </div>
 
   <div class="field">
-    <%= form.fields_for :assemblies do |ff| %>
-      <%= render 'assembly_fields', f: ff %>
+    <%= form.fields_for :assemblies do |af| %>
+      <%= render 'assembly_fields', f: af %>
     <% end %>
   </div>
 
     <div class="field">
-    <%= form.fields_for :wine_scores do |ff| %>
-      <%= render 'wine_score_fields', f: ff %>
+    <%= form.fields_for :wine_scores do |ws| %>
+      <%= render 'wine_score_fields', f: ws %>
     <% end %>
   </div>
 
