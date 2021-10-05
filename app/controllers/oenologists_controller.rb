@@ -64,6 +64,6 @@ class OenologistsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def oenologist_params
-      params.require(:oenologist).permit(:name, :age, :nationality)
+      params.require(:oenologist).permit(:name, :age, :nationality, oenologist_magazines_attributes: [:id, :magazine_id, :editor, :writer, :reviewer])
     end
 end
