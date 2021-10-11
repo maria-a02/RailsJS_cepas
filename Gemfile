@@ -30,6 +30,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
 gem 'cocoon'
 gem 'devise'
+gem 'rspec-rails'
+gem 'rails-controller-testing'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 

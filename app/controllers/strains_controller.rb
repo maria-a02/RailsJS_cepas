@@ -1,5 +1,7 @@
 class StrainsController < ApplicationController
   before_action :set_strain, only: %i[ show edit update destroy ]
+  #skip_before_action :authenticate_user!
+  #skip_before_action :only_admin
 
   # GET /strains or /strains.json
   def index

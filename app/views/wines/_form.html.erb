@@ -22,8 +22,8 @@
   </div>
 
   <div class="field">
-    <%= form.fields_for :assemblies do |af| %>
-      <%= render 'assembly_fields', f: af %>
+    <%= form.fields_for :assemblies do |ff| %>
+      <%= render 'assembly_fields', f: ff %>
     <% end %>
   </div>
 
@@ -32,8 +32,8 @@
   </div>
 
   <div class="field">
-    <%= form.fields_for :wine_scores do |ws| %>
-      <%= render 'wine_score_fields', f: ws %>
+    <%= form.fields_for :wine_scores do |ff| %>
+      <%= render 'wine_score_fields', f: ff %>
     <% end %>
   </div>
 

@@ -1,7 +1,8 @@
 class WinesController < ApplicationController
   before_action :set_wine, only: %i[ show edit update destroy ]
   before_action :authenticate_user!
-  before_action :not_admin, except:
+  #skip_before_action :authenticate_user!
+  #skip_before_action :only_admin
 
   # GET /wines or /wines.json
   def index
@@ -15,14 +16,15 @@ class WinesController < ApplicationController
   # GET /wines/new
   def new
     @wine = Wine.new
+    @wine.assemblies.build
     @strains = Strain.all
     @strains_two = Strain.pluck :name, :id
-    @oenologists = Oenologist.all
-    @wine.assemblies.build
+    @oenologists = Oenologist.all  
   end
 
   # GET /wines/1/edit
   def edit
+    @wine.wine_scores.build
     @strains = Strain.all
     @strains_two = Strain.pluck :name, :id
     @oenologists = Oenologist.all
@@ -73,7 +75,7 @@ class WinesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def wine_params
-      params.require(:wine).permit(:name, assemblies_attributes:[:id, :strain_id, :percentage], wine_scores_attributes: [:id, :score ,:wine_id, :oenologist_id])
+      params.require(:wine).permit(:name, {assemblies_attributes:[:id, :strain_id, :percentage]}, {wine_scores_attributes: [:oenologist_id, :wine_id, :score]})
     end
 
     def not_admin
